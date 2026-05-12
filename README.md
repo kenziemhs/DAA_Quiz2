@@ -49,7 +49,7 @@ Produces `results_maze_generation.csv` and `results_bfs_pathfinding.csv` — ope
 Iterative DFS with a stack. Starts at cell `(1,1)`, picks a random unvisited neighbor at distance 2, knocks down the wall between them, and recurses. When stuck, backtracks. Time complexity **O(N)** where N = number of cells (each cell visited once). After generation, a few internal walls are randomly removed to create loops, which makes the ghost AI more interesting.
 
 ### BFS ghost AI
-Standard BFS from ghost position to player position. Uses a `deque` for the queue and a `parent` dict that doubles as the visited set. Reconstructs the path by walking back through parents. Time complexity **O(V + E)**; on a grid that's **O(rows × cols)**. Re-computed every `BFS_RECOMPUTE_INTERVAL` frames rather than every frame to save CPU without making the ghosts noticeably "dumber".
+Standard BFS from ghost position to player position. Uses a `dequeue` for the queue and a `parent` dict that doubles as the visited set. Reconstructs the path by walking back through parents. Time complexity **O(V + E)**; on a grid that's **O(rows × cols)**. Re-computed every `BFS_RECOMPUTE_INTERVAL` frames rather than every frame to save CPU without making the ghosts noticeably "dumber".
 
 ## Team
 
